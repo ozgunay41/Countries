@@ -26,7 +26,7 @@ class CountryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_country, container, false)
         return dataBinding.root
     }
@@ -51,16 +51,6 @@ class CountryFragment : Fragment() {
         viewModel.countryLiveData.observe(viewLifecycleOwner, Observer { country ->
             country?.let {
                 dataBinding.selectedCountry = country
-
-                /*
-                countryName.text=country.countryName
-                countryRegion.text=country.countryRegion
-                countryCapital.text=country.countryCapital
-                countryCurrency.text=country.countryCurrency
-                countryLanguage.text=country.countryLanguage
-                context?.let {
-                    countryImage.downloadFromUrl(country.url, placeholderProgressBar(it))
-                }*/
 
 
             }

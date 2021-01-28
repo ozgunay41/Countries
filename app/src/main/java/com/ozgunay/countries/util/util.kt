@@ -8,7 +8,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.ozgunay.countries.R
 
-//hangi sınıfa eklenti yapacaksak ona yazıyoruz extensions
 
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
 

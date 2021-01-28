@@ -11,11 +11,7 @@ abstract class CountryDatabase : RoomDatabase() {
 
     abstract fun countryDao(): CountryDao
 
-
-
-
     companion object {
-
 
         @Volatile
         private var instance: CountryDatabase? = null
@@ -24,11 +20,11 @@ abstract class CountryDatabase : RoomDatabase() {
 
 
         operator fun invoke(context: Context) = instance
-            ?: synchronized(lock) {  //birden fazla thread instance'a erişmeye çalışırsa sadece bir tanesine izin verir.
-                instance ?: makeDatabase(context).also {
-                    instance = it
+                ?: synchronized(lock) {
+                    instance ?: makeDatabase(context).also {
+                        instance = it
+                    }
                 }
-            }
 
 
         private fun makeDatabase(context: Context) = Room.databaseBuilder(
